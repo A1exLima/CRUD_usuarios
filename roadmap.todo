@@ -2,11 +2,53 @@ CRUD DE USUÁRIOS
 
 1.PARTE
 
-☐ .Solicitando a requisao do framework express
-☐ . Cria uma aplicacao/servidor
-☐ . Dizer para o servidor o endereco e a funcao a ser executada quando esse endereco receber uma requisicao
-☐ .Fazer o servidor ficar de prontidao aguardando a requisicao
+✔ . Solicitando a requisao do framework express @done(22-07-20 10:25)
+✔ . Cria uma aplicacao/servidor @done(22-07-20 10:25)
+✔ . Dizer para o servidor o endereco e a funcao a ser executada quando esse endereco receber uma requisicao @done(22-07-20 10:27)
+✔ . Fazer o servidor ficar de prontidao aguardando a requisicao @done(22-07-20 10:29)
 .............................................................................................................
 
 2.PARTE
+
+✔ . CODAR O ARQUIVO USUÁRIO.JSON COM OS OBJETOS ID DE USUÁRIO E NOME @done(22-07-20 10:35)
+✔ . CRIAR O ARQUIVO FUNCTIONS PARA ABRIGAR AS FUNCOES CRUD @done(22-07-20 10:43)
+
+✔ . CRIAR A FUNCAO criarUsuarios @done(22-07-20 17:50)
+
+. INFERIR O ID DO USUÁRIO
+. CRIAR UM OBJETO LITERAL COM OS DADOS DO USUÁRIO (ID E NOME)
+. ADICIONAR NOVO USUARIO AO OBJETO LITERAL
+. SALVAR ARRAY DE OBJETOS COM O NOVO USUARIO EM /DATABASE/USUARIOS.JSON
+
+✔ . CRIAR A FUNCAO listarUsuarios @done(22-07-20 18:44)
+
+. LISTAR USUARIOS
+
+✔ . CRIAR A FUNCAO buscarUsuarios @done(22-07-20 18:46)
+
+. RECEBE COMO PARAMETRO O ID DO USUARIO
+. ATRAVES DO ID, USAR UM MÉTODO JAVASCRIPT PARA ENCONTRAR O USUÁRIO DENTRO DO ARRAY DE OBJETOS.
+. ENCONTRADO O USUARIO, VERIFICAR SE ESSE ID EXISTE. SE SIM RETORNA ESSE USUÁRIO, CASO CONTRÁRIO, 
+  IMPRIMIR UMA MENSAGEM INFORMANDO ("ERRO: USUÁRIO COM ID NÃO ENCONTRADO).
+
+✔ . CRIAR A FUNCAO removerUsuarios @done(22-07-20 18:48)
+
+. RECEBE COMO PARAMETRO O ID DO USUARIO
+. USAR A FUNCAO buscarUsuarios E SALVA EM UMA VARIAVEL
+. VERIFICAR SE O ID BUSCADO EXISTE, SE SIM REMOVE USUARIO, CASO CONTRARIO,
+  NAO EXECUTAR NENHUMA ACAO, POIS A FUNCAO buscarUsuarios retornara uma mensagem
+  "ERRO: USUÁRIO COM ID NÃO ENCONTRADO.
+. SALVAR NOVO ARRAY DE OBJETOS USUARIO COM O USUÁRIO REMOVIDO EM /database/usuarios.json
+
+
+✔ . CRIAR A FUNCAO substituirUsuarios @done(22-07-20 19:22)
+
+. RECEBE COMO PARAMETRO O NOME NOVO A SER SUBSTITUIDO E O ID DO USUARIO A SER SUBSTITUIDO
+. USA A FUNCAO buscarUsuarios PARA ENCONTRAR O USUARIO A SER SUBSTITUIDO
+. SALVA USUARIO ANTIGO EM UMA VARIAVEL
+. ALTERA O NOME DO USUÁRIO ANTIGO PARA O NOVO NOME QUE RECEBEU COMO PARAMETRO NA FUNCAO
+. SALVA NOVO ARRAY DE OBJETOS USUÁRIO COM O USUÁRIO SUSBTITUIDO EM /database/usuarios.json
+
+
+
 

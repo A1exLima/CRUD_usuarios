@@ -2,8 +2,14 @@ const usuarios = require("./database/usuarios2.json");
 const fs = require ('fs');
 const path = require("path");
 
+function salvarUsuario() {
+    
+    fs.writeFileSync(path.resolve("./database/usuarios2.json"), JSON.stringify(usuarios, null, 4));
+}
+
 module.exports = {
 
+    // ok
     criarUsuarios: (nome) => {
 
         let novoId = usuarios[usuarios.length - 1].id + 1;
@@ -15,16 +21,17 @@ module.exports = {
 
         usuarios.push(novoUsuario);
 
-        fs.writeFileSync(path.resolve("./database/usuarios2.json"), JSON.stringify(usuarios, null, 4));
-
+        salvarUsuario();
     },
 
+    // ok
     listarUsuarios: () => {
 
         return usuarios;
 
     },
 
+    // ok
     buscarUsuarios: (id) => {
 
         let usuarioEncontrado = usuarios.find( usuarios => usuarios.id == id);
@@ -32,23 +39,25 @@ module.exports = {
         return usuarioEncontrado == undefined ? console.log('ERRO: USUÁRIO COM ID NÃO ENCONTRADO') : usuarioEncontrado;
     },
     
-    removerUsuarios: (id) => {
-
-        let usuarioEncontrado = buscarUsuarios(id);
-
-        usuarioEncontrado == undefined ? ("") : usuarios.splice(usuarios.indexOf(usuarioEncontrado),1);
-
-        fs.writeFileSync(path.resolve("./database/usuarios2.json"), JSON.stringify(usuarios, null, 4));
-
+    
+    // ok
+    removerUsuarios: function(id) {
+        
+        let usuarioEncontrado = this.buscarUsuarios(id);
+        
+        usuarioEncontrado.id == undefined ? ("") : usuarios.splice(usuarios.indexOf(usuarioEncontrado),1);
+        
+        salvarUsuario();
     },
  
-    substituirUsuarios: (novoNome, id) => {
+    substituirUsuarios: function(novoNome, id) {
 
-        let usuarioEncontrado = buscarUsuarios(id);
+        let usuarioEncontrado = this.buscarUsuarios(id);
 
-        usuarioEncontrado.nome = novoNome;
+        usuarioEncontrado == undefined ? ("") : usuarioEncontrado.nome = novoNome;
 
-        fs.writeFileSync(path.resolve("./database/usuarios2.json"), JSON.stringify(usuarios, null, 4));
+        salvarUsuario();
 
+        return usuarioEncontrado;
     }
 }
